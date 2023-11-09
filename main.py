@@ -17,8 +17,8 @@ class ImageEditor(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setFixedSize(self.width(), self.height())
 
-        Path("/Users/pavelvolkov/ImageEditor").mkdir(parents=True,
-                                                     exist_ok=True)
+        # Path("/Users/pavelvolkov/ImageEditor").mkdir(parents=True,
+        #                                              exist_ok=True)
 
         # Opening an image
         self.open_image()
@@ -269,7 +269,8 @@ class ImageEditor(QMainWindow, Ui_MainWindow):
                                                     '(with format):')
 
         if ok_pressed:
-            self.curr_image.save(f'/Users/pavelvolkov/ImageEditor/{filename}')
+            # self.curr_image.save(f'/Users/pavelvolkov/ImageEditor/{filename}')
+            self.curr_image.save(filename)
 
             self.statusbar.showMessage(f'Image saved as "{filename}"')
 
